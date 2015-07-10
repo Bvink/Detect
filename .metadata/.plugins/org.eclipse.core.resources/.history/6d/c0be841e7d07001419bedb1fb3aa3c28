@@ -1,0 +1,31 @@
+package com.tornado.detect;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class ActivityHiScore extends Activity {
+	
+	protected int getLayoutId() {
+		return R.layout.hiscore;
+	}
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(getLayoutId());
+		
+		TextView t = (TextView)findViewById(R.id.HiScoreTextList);
+	}
+	
+	private String setScores(ArrayList<Integer> scores) {
+		StringBuilder scoreList = new StringBuilder("");
+		for(int score : scores){
+			scoreList.append(score+"\n");
+		}
+		return scoreList.toString();
+	}
+
+}

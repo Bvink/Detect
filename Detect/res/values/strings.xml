@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Detect</string>
+    
+    <string name="easy">WALK();</string>
+    <string name="normal">CYCLE();</string>
+    <string name="hard">DRIVE();</string>
+    <string name="hiscore">H</string>
+    <string name="fullhiscore">HISCORE</string>
+    <string name="fullhiscoretwo">HARDMODE HISCORE</string>
+    
+    <color name="clrWhite">#FFFFFF</color>
+    <color name="clrDarkBlue">#001A3D</color>
+    <color name="clrRed">#FF0000</color>
+    
+    <string name="icon">Detect</string>
+    <string name="logodesc">Detect logo</string>
+    <string name="splashdesc">Detect Splash</string>
+    <string name="spiraldesc">Spiral Image</string>
+
+    
+</resources>

@@ -1,0 +1,26 @@
+package com.tornado.detect.constants;
+
+public class DetectConstants {
+
+	public static final double SPAWNDISTANCE = 500.0;
+
+	public static final int ZOOMLEVEL = 15;
+	public static final int MAX_HISCORE = 10;
+	
+	public static final double EASYLEVEL = 0.01;
+	public static final double NORMALLEVEL = 0.02;
+	public static final double HARDLEVEL = 0.03;
+	public static final double DEFAULTLEVEL = 0.01;
+	
+	public static final int REQUESTCODE = 10;
+	public static final int NOTIFICATIONCODE = 9999;
+	
+	public static final int SPEED_INCREMENT_TIME = 300;
+	public static final int SPINE_SPAWN_TIME = 30;
+	public static final int REFRESHRATE = 100;
+	public static final double ORBIT = 1;
+	
+	public static final long[] SOUNDPATTERN = { 0, 350, 200, 150, 200, 350 };
+	public static final long[] WARNINGSOUNDPATTERN = { 0, 350 };
+	
+}

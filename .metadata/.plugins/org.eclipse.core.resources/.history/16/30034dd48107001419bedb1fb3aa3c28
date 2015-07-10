@@ -1,0 +1,61 @@
+package com.tornado.detect;
+
+import java.util.ArrayList;
+
+import com.tornado.core.api.utils.Timer;
+import com.tornado.core.api.utils.TinyDB;
+import com.tornado.detect.settings.DetectSettings;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class ActivityHiScore extends Activity {
+	
+	protected int getLayoutId() {
+		return R.layout.hiscore;
+	}
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(getLayoutId());
+		
+		TextView t = (TextView)findViewById(R.id.HiScoreTextList);
+		ArrayList<Integer> scores = getHiScore();
+		if (scores != null) {
+			t.setText(setScores(scores));
+		}
+	}
+	
+	private String setScores(ArrayList<Integer> scores) {
+		StringBuilder scoreList = new StringBuilder("");
+		for(int score : scores){
+			String val = Timer.format(score);
+			scoreList.append(val+"\n");
+		}
+		return scoreList.toString();
+	}
+	
+	private ArrayList<Integer> getHiScore() {
+		Context context = getBaseContext();
+		TinyDB tinydb = new TinyDB(context);
+		ArrayList<Integer> als = null;
+		switch (DetectSettings.getDifficulty()) {
+		case 0:
+			 als = tinydb.getListInt("DetectEasyScores", context);
+			break;
+		case 1:
+			als = tinydb.getListInt("DetectNormalScores", context);
+			break;
+		case 2:
+			als = tinydb.getListInt("DetectHardScores", context);
+			break;
+		default:
+			break;
+		}
+		return als;
+	}
+
+}

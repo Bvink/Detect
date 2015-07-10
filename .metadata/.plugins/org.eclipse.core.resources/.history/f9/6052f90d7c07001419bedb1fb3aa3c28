@@ -1,0 +1,5 @@
+package com.tornado.core.api.utils;
+
+public class TinyDB {
+
+}
